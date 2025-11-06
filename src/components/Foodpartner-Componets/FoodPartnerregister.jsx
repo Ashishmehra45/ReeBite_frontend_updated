@@ -16,7 +16,7 @@ const FoodPartnerregister = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/food-partner/register",
+        "https://reebite-backend.onrender.com/api/auth/food-partner/register",
         { name, email, contact, address, password },
         { withCredentials: true }
       );

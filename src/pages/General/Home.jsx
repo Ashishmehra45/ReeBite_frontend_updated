@@ -13,14 +13,14 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/food", { withCredentials: true })
+      .get("https://reebite-backend.onrender.com/api/food", { withCredentials: true })
       .then((response) => {
         setVideos(response.data.fooditem);
       })
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           // user not logged in
-          navigate("user/login");
+          navigate("/user/login");
         } else {
           console.error(err);
         }
@@ -30,7 +30,7 @@ const Home = () => {
     async function onclicklike(item) {
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/food/like",
+                "https://reebite-backend.onrender.com/api/food/like",
                 { foodId: item._id },
                 { withCredentials: true }
             );
@@ -63,7 +63,7 @@ const Home = () => {
     async function onclicksave(item) {
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/food/save",
+                "https://reebite-backend.onrender.com/api/food/save",
                 { foodId: item._id }, // Data payload
                 { withCredentials: true } // Config object
             );

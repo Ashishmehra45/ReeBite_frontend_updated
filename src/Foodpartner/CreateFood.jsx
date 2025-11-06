@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
   // 3. The actual, correct request in the try block runs now.
   try {
     const response = await axios.post(
-      'http://localhost:3000/api/food/', // <-- Your intended endpoint
+      'https://reebite-backend.onrender.com/api/food/', // <-- Your intended endpoint
       formData,
       { 
         headers: {

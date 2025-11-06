@@ -12,7 +12,7 @@ const ProfileLayout = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/food-partner/${id}`, {
+      .get(`https://reebite-backend.onrender.com/api/food-partner/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

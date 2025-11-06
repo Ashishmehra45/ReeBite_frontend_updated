@@ -51,7 +51,7 @@ const Saved = () => {
     const fetchSavedVideos = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/food/save",
+          "https://reebite-backend.onrender.com/api/food/save",
           { withCredentials: true }
         );
 
