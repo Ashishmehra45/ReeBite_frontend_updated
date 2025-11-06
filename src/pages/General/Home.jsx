@@ -20,7 +20,7 @@ const Home = () => {
       .catch((err) => {
         if (err.response && err.response.status === 401) {
           // user not logged in
-          navigate("/user/login");
+          navigate("user/login");
         } else {
           console.error(err);
         }
