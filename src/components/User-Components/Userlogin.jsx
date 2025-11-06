@@ -15,7 +15,7 @@ const floating = {
   },
 };
 
-const Userlogin = () => {
+const UserLogin = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
@@ -177,4 +177,4 @@ const Userlogin = () => {
   );
 };
 
-export default Userlogin;
+export default UserLogin;

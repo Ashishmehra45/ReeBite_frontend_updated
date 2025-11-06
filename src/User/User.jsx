@@ -2,7 +2,7 @@ import React from 'react'
 import Userlogin from '../components/User-Components/UserLogin'
 import Userregister from '../components/User-Components/UserRegister'
 
-function user() {
+function User() {
   return (
     <div>
             <Userlogin></Userlogin>
@@ -12,4 +12,4 @@ function user() {
   )
 }
 
-export default user
+export default User

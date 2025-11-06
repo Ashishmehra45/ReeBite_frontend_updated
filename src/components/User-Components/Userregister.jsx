@@ -15,7 +15,7 @@ const floating = {
   },
 };
 
-const Userregister = () => {
+const UserRegister = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -201,4 +201,4 @@ const Userregister = () => {
   );
 };
 
-export default Userregister;
+export default UserRegister;
