@@ -1,12 +1,12 @@
 import React from 'react'
-import Userlogin from '../components/User-Components/UserLogin'
-import Userregister from '../components/User-Components/UserRegister'
+import UserLogin from '../components/User-Components/UserLogin'
+import UserRegister from '../components/User-Components/UserRegister'
 
 function User() {
   return (
     <div>
-            <Userlogin></Userlogin>
-            <Userregister/>
+            <UserLogin></UserLogin>
+            <UserRegister/>
 
     </div>
   )
