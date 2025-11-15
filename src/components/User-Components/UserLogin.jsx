@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import api from "../../services/api";
 
 // Floating bounce animation
 const floating = {
@@ -27,10 +28,9 @@ const UserLogin = () => {
 
     setMessage("");
     setIsError(false);
-
     try {
-      const response = await axios.post(
-        "https://reebite-backend.onrender.com/api/auth/user/login",
+      const response = await api.post(
+        "/auth/user/login",
         { email, password },
         { withCredentials: true }
       );
@@ -44,6 +44,7 @@ const UserLogin = () => {
       const errorMessage =
         error.response?.data?.message ||
         "Login failed. Please check your credentials.";
+
       console.error(errorMessage);
       setMessage(errorMessage);
       setIsError(true);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import api from "../../services/api";
 
 // In-line SVG Home Icon
 const HomeIcon = (props) => (
@@ -47,13 +48,11 @@ const Saved = () => {
 
   useEffect(() => {
     let isMounted = true;
-
     const fetchSavedVideos = async () => {
       try {
-        const response = await axios.get(
-          "https://reebite-backend.onrender.com/api/food/save",
-          { withCredentials: true }
-        );
+        const response = await api.get("/food/save", {
+          withCredentials: true,
+        });
 
         const fetchedData = response.data.savefood;
 

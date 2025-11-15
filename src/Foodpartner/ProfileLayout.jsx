@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import api from "../services/api";
 
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -11,8 +12,8 @@ const ProfileLayout = () => {
   const [activeVideoId, setActiveVideoId] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`https://reebite-backend.onrender.com/api/food-partner/${id}`, {
+    api
+      .get(`/food-partner/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -35,7 +36,6 @@ const ProfileLayout = () => {
     setActiveVideoId(null);
   };
 
- 
   useEffect(() => {
     const videoContainers = document.querySelectorAll(".video-item");
 
@@ -51,7 +51,6 @@ const ProfileLayout = () => {
           console.warn("Autoplay was prevented by the browser:", error);
         });
       } else {
-       
         video.pause();
         video.currentTime = 0;
       }
@@ -77,12 +76,11 @@ const ProfileLayout = () => {
         <div className="absolute inset-0 bg-pink-100/30 blur-2xl opacity-50"></div>
 
         <div className="relative z-10 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-        
           <div
             className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-pink-500/80 flex-shrink-0 bg-cover bg-center shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
             style={{
               backgroundImage: `url('/WhatsApp Image 2025-10-14 at 19.12.31_cd3b4043.jpg')`,
-              backgroundColor: "#f7f7f7", 
+              backgroundColor: "#f7f7f7",
             }}
           ></div>
 

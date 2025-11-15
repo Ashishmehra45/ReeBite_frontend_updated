@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import api from "../../services/api";
 
 // Floating bounce animation
 const floating = {
@@ -30,14 +31,15 @@ const UserRegister = () => {
     const password = e.target.password.value;
 
     try {
-      const response = await axios.post(
-        "https://reebite-backend.onrender.com/api/auth/user/register",
+      const response = await api.post(
+        "/auth/user/register",
         { fullname, email, password },
         { withCredentials: true }
       );
 
       setSuccess("✅ User registered successfully!");
       console.log(response.data);
+
       setTimeout(() => navigate("/user/login"), 1000);
     } catch (err) {
       if (err.response && err.response.status === 400) {
@@ -45,6 +47,7 @@ const UserRegister = () => {
       } else {
         setError("❌ Something went wrong. Please try again.");
       }
+
       console.error(err);
     }
   };
